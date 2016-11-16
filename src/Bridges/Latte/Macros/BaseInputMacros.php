@@ -26,7 +26,7 @@ abstract class BaseInputMacros extends MacroSet
 	{
 		$me = new static($compiler);
 		$me->addMacro('input', [$me, 'macroInput']);
-		$me->addMacro('label', [$me, 'macroLabel'], [$me, 'macroLabelEnd']);
+		$me->addMacro('label', [$me, 'macroLabel'], [$me, 'macroLabelEnd'], NULL, self::AUTO_EMPTY);
 		return $me;
 	}
 
