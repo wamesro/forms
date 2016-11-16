@@ -23,7 +23,8 @@ class FormsExtension extends CompilerExtension
 		parent::beforeCompile();
 		$builder = $this->getContainerBuilder();
 		$builder->getDefinition('nette.latteFactory')
-			->addSetup('?->onCompile[] = function ($engine) { Nextras\Forms\Bridges\Latte\Macros\BS3InputMacros::install($engine->getCompiler()); }', ['@self']);
+			->addSetup('Nextras\Forms\Bridges\Latte\Macros\BS3InputMacros::install(?->getCompiler())', ['@self']);
+// 			->addSetup('?->onCompile[] = function ($engine) { Nextras\Forms\Bridges\Latte\Macros\BS3InputMacros::install($engine->getCompiler()); }', ['@self']);
 	}
 
 
